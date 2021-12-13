@@ -8,8 +8,7 @@ import requests
 #log into trello and find following values (do not store to github):
 list_id = "" #the id for your list, add .json end of trello  url and find list: id:
 key = "" #https://trello.com/app-key
-token = "" # in trello account settings, https://trello.com/1/authorize?expiration=never&scope=read,write,account&response_type=token&name=Server%20Token&key=05025e2c8015308b5601ac75c9fb60ce
-
+token = "" # set in trello account settings
 
 card_name="kissa-testi"
 
