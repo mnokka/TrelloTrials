@@ -64,11 +64,7 @@ def main(argv):
 
     #Get env variables from file (do not store to Github)
     token=GetEnvVar("TOKEN") # set in trello account settings
-<<<<<<< HEAD
     key=GetEnvVar("KEY") #https://trello.com/app-key
-=======
-    key=GetEnvVar("KEY") #h ttps://trello.com/app-key
->>>>>>> 98ccc88d8b1f2b185b6a9c01f9e47458891b0260
     list_id=GetEnvVar("LISTID") # the id for your list, add .json end of trello  url and find list: id:
  
 
