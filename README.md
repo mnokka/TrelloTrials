@@ -15,5 +15,8 @@ LISTID --> the id for your list, add .json end of trello  url and find list: id:
 In Linux one can have env setting file which exports  (when sourced to shell) these values to env variables. Do not store this file to Github. If one gives these values via command args, they can be observed from shell history. Python also offers some key storage libs.
 
  
+ USAGE:
+ 
+ python3 CreateCard.py -n "name of the new Trello card"
  
     
