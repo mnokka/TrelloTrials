@@ -46,18 +46,20 @@ def main(argv):
 
 
     parser.add_argument('-v', help='Show version&author and exit', action='version',version="Version:{0}   mika.nokka1@gmail.com".format(__version__) )  
-    parser.add_argument("-n",help='<Name of the new Trello Card>',metavar="cardname")
+    parser.add_argument("-n",help='<Name of the new Trello Card (Required)>',metavar="cardname")
+    parser.add_argument("-d",help='<Description of the new Trello Card (Optional)>',metavar="desc")
 
     args = parser.parse_args()
        
     CARDNAME = args.n or ''
+    DESCRIPTION= args.d or ''
   
 
     #logging.info("CARDNAME:{0}".format(CARDNAME))
     
     # quick old-school way to check needed parameters
     if (CARDNAME==''):
-        logging.error("\n---> MISSING ARGUMENTS!!\n ")
+        logging.error("\n---> MISSING REQUIRED ARGUMENTS!!\n ")
         parser.print_help()
         sys.exit(2)
 
@@ -70,7 +72,7 @@ def main(argv):
 
 
     url = f"https://api.trello.com/1/cards"
-    querystring = {"name": CARDNAME, "idList": list_id, "key": key, "token": token} # full restapi: https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-cards-post
+    querystring = {"name": CARDNAME, "desc": DESCRIPTION, "idList": list_id, "key": key, "token": token} # full restapi: https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-cards-post
     response = requests.request("POST", url, params=querystring)
     # todo: handle erros (401,404 etc)
     print ("response: {0}".format(response))
